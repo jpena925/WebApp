@@ -57,7 +57,8 @@ class HeaderNotificationMenu extends Component {
   }
 
   onActivityStoreChange () {
-    const allActivityNotices = ActivityStore.allActivityNotices();
+    // const allActivityNotices = ActivityStore.allActivityNotices(); // this has no notification content from API
+    const allActivityNotices = ActivityStore.allActivity(); // this does have all notification data
     // console.log('allActivityNotices:', allActivityNotices);
     const activityNoticeIdListNotSeen = allActivityNotices
       .filter((activityNotice) => activityNotice.activity_notice_seen === false)
